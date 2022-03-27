@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pide tu pizza</title>
+
+</head>
+
+<body>
+    <div class="solicitud">
+    <h1>Pide tu pizza</h1>
+    <div class="formulario"> 
+        <form action="" method ="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" placeholder="Ingresa tu nombre" id="nombre" minlength="5" maxlength="20" name ="nombre" required> <br>
+            <label for="direccion">Dirección:</label>
+            <input type="text" placeholder="Direccion de entrega" minlength="10" maxlength="40" name ="direccion" id="direccion" required> <br>
+            <label for="fname">Comentarios opcionales:</label><br>
+            <textarea name="comentarios" cols="30" rows="2" maxlength="100"></textarea><br> 
+            <label for="fname">Elige pizza:</label><br> 
+            <select name="pizza" required>
+                <option value="1">Vegetariana</option>
+                <option value="2">Margarita</option>
+                <option value="3">Cuatro quesos</option>
+                <option value="4">Hawaiana</option>
+            </select><br> 
+            <label for="fname">Ingresa cupon:</label><br> 
+            <input type="file" name="cupon" required><br> 
+            <input type="submit" value="Enviar">
+        </form> 
+    </div>
+</div>
+</body>
+</html>
+
+ 
