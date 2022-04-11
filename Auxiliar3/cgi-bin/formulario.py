@@ -3,6 +3,7 @@
 
 import cgi 
 import cgitb 
+import sys
 
 cgitb.enable()
 print("Content-type:text/html")

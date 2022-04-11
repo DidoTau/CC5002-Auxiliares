@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pide tu pizza</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">CC5002</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Hacer Pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ver Pedidos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="solicitud align-items-center">
+        <h1 class="text-center">Pide tu pizza</h1>
+        <div class="formulario"> 
+            <form action="" method ="post">
+                <div class="form-group mb-2">
+                    <label for="nombre">Nombre </label>
+                    <input type="text" placeholder="Ingresa tu nombre" id="nombre" class ="form-control" minlength="5" maxlength="20" name ="nombre" required> 
+                </div>
+                <div class="form-group mb-2">
+                    <label for="direccion">Direccion </label>
+                    <input type="text" class ="form-control" placeholder="Direccion de entrega" minlength="10" maxlength="40" name ="direccion" id="direccion" required> 
+                </div>
+                <div class="form-group mb-2">
+                    <label for="fname">Comentarios opcionales </label>
+                    <textarea name="comentarios" class = "form-control" cols="30" rows="2" maxlength="100"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="fname">Elige pizza </label>
+                    <select name="pizza" class= "form-control" required>
+                        <option value="Vegetariana">Vegetariana</option>
+                        <option value="Margarita">Margarita</option>
+                        <option value="Cuatro quesos">Cuatro quesos</option>
+                        <option value="Hawaiana">Hawaiana</option>
+                    </select>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="fname">Ingresa cupon </label> 
+                    <input type="file" name="cupon" class="form-control" required>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primary mb-2">
+            </form> 
+        </div>
+    </div>
+
+
+        <footer class="bg-light text-center text-white fixed-bottom">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #3b5998;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #55acee;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #dd4b39;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #ac2bac;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #0082ca;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-primary btn-floating m-1"
+              style="background-color: #333333;"
+              href="#!"
+              role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+        
+ 
+      <!-- End of .container -->
+</body>
+</html>
+
+ 
