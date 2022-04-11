@@ -18,23 +18,26 @@ class DB:
         fileobj = data[4]
         filename = fileobj.filename
         
-        sql = "SELECT COUNT(id) FROM cupon"
+        sql = "SELECT COUNT(id) FROM cupon" # Cuenta los archivos que hay en la base de datos
         self.cursor.execute(sql)
         total = self.cursor.fetchall()[0][0] + 1
-        filename_hash = hashlib.sha256(filename.encode()).hexdigest()[0:30]
-        filename_hash += f"_{total}"
-        # guardar archivo
+        filename_hash = hashlib.sha256(filename.encode()).hexdigest()[0:30] # aplica función de hash
+        filename_hash += f"_{total}" # concatena la función de hash con el número total de archivos, nombre único
+        # OJO: lo anterior puede ser peligroso en el caso en que se tenga un servidor que ejecute peticiones en paralelo.
+        #       Lo que se conoce como un datarace
+
+        # Guardar archivo
         try:
-            open(f"media/img/{filename_hash}", "wb").write(fileobj.file.read())
+            open(f"media/{filename_hash}", "wb").write(fileobj.file.read()) # guarda el archivo localmente
             sql_file = '''
                 INSERT INTO cupon (nombre, path) 
                 VALUES (%s, %s)
                 '''
-            self.cursor.execute(sql_file, (filename, filename_hash))  
+            self.cursor.execute(sql_file, (filename, filename_hash))  # ejecuta la query que guarda el archivo en base de datos
            
 
             # guardar pedido
-            id_cupon = self.cursor.getlastrowid()
+            id_cupon = self.cursor.getlastrowid() # recupera el último id ingresado
             sql ='''
                 INSERT INTO pedidos (nombre, direccion, comentarios, tipo, cupon) 
                 VALUES (%s, %s, %s, %s, %s)
@@ -46,7 +49,7 @@ class DB:
             sys.exit()
 
     def get_data(self):
-        # Procesar archivo
+        
         sql = '''
             SELECT p.nombre, p.direccion, p.tipo, c.nombre FROM pedidos p
             LEFT JOIN cupon c
@@ -54,3 +57,6 @@ class DB:
             '''
         self.cursor.execute(sql)
         return self.cursor.fetchall()
+
+
+        

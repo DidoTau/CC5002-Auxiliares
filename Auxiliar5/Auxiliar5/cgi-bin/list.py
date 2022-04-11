@@ -1,10 +1,14 @@
 # !/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-print('Content-type: text/html\r\n\r\n')
+import sys
 
-import cgi
 from db import DB
+
+print("Content-type: text/html; charset=UTF-8")
+print()
+sys.stdout.reconfigure(encoding='utf-8')
+
 
 db = DB('localhost', 'root', '', 'pizza')
 data = db.get_data()
@@ -38,4 +42,4 @@ tabla+="""
 
 with open('templates/template.html','r') as template:
     file = template.read()
-    print(file.format('Pedidos', tabla))
+    print(file.format('Listado de pedidos pedidos', tabla))

@@ -1,10 +1,14 @@
 # !/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+import cgi 
+import cgitb;
+import sys
+cgitb.enable()
 
-
-print('Content-type: text/html; charset=utf-8')
+print("Content-type: text/html; charset=UTF-8")
 print()
+sys.stdout.reconfigure(encoding='utf-8')
 
 with open('templates/template.html','r') as template:
     file = template.read()
@@ -18,7 +22,7 @@ with open('templates/template.html','r') as template:
                     <input type="text" placeholder="Ingresa tu nombre" id="nombre" class ="form-control" minlength="5" maxlength="20" name ="nombre" required> 
                 </div>
                 <div class="form-group mb-2">
-                    <label for="direccion">Direccion </label>
+                    <label for="direccion">Dirección </label>
                     <input type="text" class ="form-control" placeholder="Direccion de entrega" minlength="10" maxlength="40" name ="direccion" id="direccion" required> 
                 </div>
                 <div class="form-group mb-2">
@@ -35,10 +39,12 @@ with open('templates/template.html','r') as template:
                     </select>
                 </div>
                 <div class="form-group mb-2">
-                    <label for="cupon">Ingresa cupon </label> 
+                    <label for="cupon">Ingresa cupón </label> 
                     <input type="file" name="cupon" id="cupon" class="form-control" required>
                 </div>
                 <input type="submit" value="Enviar" class="btn btn-primary mb-2">
-            </form> 
+            </form>
+
         </div>
-    </div> """))
+    </div>
+    """))
